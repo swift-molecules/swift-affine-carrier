@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-molecules/swift-affine.git",
+            url: "https://github.com/swift-atoms/swift-affine.git",
             branch: "main"
         ),
         .package(
@@ -34,6 +34,18 @@ let package = Package(
             url: "https://github.com/swift-atoms/swift-ordinal.git",
             branch: "main"
         ),
+        .package(
+            url: "https://github.com/swift-molecules/swift-ordinal-cardinal.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-atoms/swift-tagged.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-molecules/swift-tagged-carrier.git",
+            branch: "main"
+        ),
     ],
     targets: [
         .target(
@@ -43,6 +55,7 @@ let package = Package(
                 .product(name: "Cardinal", package: "swift-cardinal"),
                 .product(name: "Carrier", package: "swift-carrier"),
                 .product(name: "Ordinal", package: "swift-ordinal"),
+                .product(name: "Ordinal Cardinal", package: "swift-ordinal-cardinal"),
             ]
         ),
         .testTarget(
@@ -50,6 +63,11 @@ let package = Package(
             dependencies: [
                 "Affine Carrier",
                 .product(name: "Affine", package: "swift-affine"),
+                .product(name: "Cardinal", package: "swift-cardinal"),
+                .product(name: "Ordinal", package: "swift-ordinal"),
+                .product(name: "Ordinal Cardinal", package: "swift-ordinal-cardinal"),
+                .product(name: "Tagged", package: "swift-tagged"),
+                .product(name: "Tagged Carrier", package: "swift-tagged-carrier"),
             ]
         ),
     ],

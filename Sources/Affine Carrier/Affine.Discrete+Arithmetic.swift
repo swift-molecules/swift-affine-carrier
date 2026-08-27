@@ -1,7 +1,8 @@
 public import Affine
-internal import Cardinal
 public import Carrier
-public import Ordinal
+public import struct Cardinal.Cardinal
+public import Ordinal_Cardinal
+public import struct Ordinal.Ordinal
 
 @inlinable
 public func + <O: Ordinal.`Protocol`>(
@@ -92,7 +93,7 @@ where
     V.Domain == C.Domain
 {
     guard lhs.vector.rawValue >= 0 else { return true }
-    return UInt(lhs.vector.rawValue) < rhs.cardinal.rawValue
+    return UInt(lhs.vector.rawValue) < rhs.underlying.rawValue
 }
 
 @inlinable
@@ -109,7 +110,7 @@ where
     V.Domain == C.Domain
 {
     guard lhs.vector.rawValue >= 0 else { return true }
-    return UInt(lhs.vector.rawValue) <= rhs.cardinal.rawValue
+    return UInt(lhs.vector.rawValue) <= rhs.underlying.rawValue
 }
 
 @inlinable
@@ -126,7 +127,7 @@ where
     V.Domain == C.Domain
 {
     guard lhs.vector.rawValue >= 0 else { return false }
-    return UInt(lhs.vector.rawValue) > rhs.cardinal.rawValue
+    return UInt(lhs.vector.rawValue) > rhs.underlying.rawValue
 }
 
 @inlinable
@@ -143,7 +144,7 @@ where
     V.Domain == C.Domain
 {
     guard lhs.vector.rawValue >= 0 else { return false }
-    return UInt(lhs.vector.rawValue) >= rhs.cardinal.rawValue
+    return UInt(lhs.vector.rawValue) >= rhs.underlying.rawValue
 }
 
 @inlinable
@@ -160,7 +161,7 @@ where
     C.Domain == V.Domain
 {
     guard rhs.vector.rawValue >= 0 else { return false }
-    return lhs.cardinal.rawValue < UInt(rhs.vector.rawValue)
+    return lhs.underlying.rawValue < UInt(rhs.vector.rawValue)
 }
 
 @inlinable
@@ -177,7 +178,7 @@ where
     C.Domain == V.Domain
 {
     guard rhs.vector.rawValue >= 0 else { return false }
-    return lhs.cardinal.rawValue <= UInt(rhs.vector.rawValue)
+    return lhs.underlying.rawValue <= UInt(rhs.vector.rawValue)
 }
 
 @inlinable
@@ -194,7 +195,7 @@ where
     C.Domain == V.Domain
 {
     guard rhs.vector.rawValue >= 0 else { return true }
-    return lhs.cardinal.rawValue > UInt(rhs.vector.rawValue)
+    return lhs.underlying.rawValue > UInt(rhs.vector.rawValue)
 }
 
 @inlinable
@@ -211,5 +212,5 @@ where
     C.Domain == V.Domain
 {
     guard rhs.vector.rawValue >= 0 else { return true }
-    return lhs.cardinal.rawValue >= UInt(rhs.vector.rawValue)
+    return lhs.underlying.rawValue >= UInt(rhs.vector.rawValue)
 }
