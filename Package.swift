@@ -19,31 +19,31 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-atoms/swift-affine.git",
+            url: "https://github.com/swift-atoms/swift-affine",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-atoms/swift-carrier.git",
+            url: "https://github.com/swift-atoms/swift-carrier",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-atoms/swift-cardinal.git",
+            url: "https://github.com/swift-atoms/swift-cardinal",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-atoms/swift-ordinal.git",
+            url: "https://github.com/swift-atoms/swift-ordinal",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-ordinal-cardinal.git",
+            url: "https://github.com/swift-molecules/swift-ordinal-cardinal",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-atoms/swift-tagged.git",
+            url: "https://github.com/swift-atoms/swift-tagged",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-molecules/swift-tagged-carrier.git",
+            url: "https://github.com/swift-molecules/swift-tagged-carrier",
             branch: "main"
         ),
     ],
